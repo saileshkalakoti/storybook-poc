@@ -1,0 +1,124 @@
+
+.input-group {
+  position: relative;
+  min-height: 69px;
+}
+
+.input-element {
+  display: block;
+  width: 100%;
+  padding: 5px 10px 5px 0;
+  border: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid #9b9b9b !important;
+  font-size: 18px;
+  line-height: 21px;
+  height: 36px;
+}
+.input-element:disabled {
+  color: #404040;
+  border-bottom: 1px solid rgba(155, 155, 155, 0.3) !important;
+  cursor: no-drop;
+}
+.input:disabled {
+  color: #404040;
+}
+[type="date"] {
+  background: #fff 100% 40% no-repeat;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url(../../icons/calendar.svg) 100% 40% no-repeat;
+  border-width: thin;
+  width: 20px;
+  height: 20px;
+}
+
+[type="datetime-local"] {
+  background: #fff 100% 40% no-repeat;
+}
+
+[type="datetime-local"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url(../../icons/calendar.svg) 100% 40% no-repeat;
+  border-width: thin;
+  width: 20px;
+  height: 20px;
+}
+
+.input-element:focus {
+  outline: none;
+}
+
+.mandatoryField {
+  margin-left: 1%;
+  font-size: 14px;
+  color: red);
+}
+/** Label **/
+
+.input-label {
+  pointer-events: none;
+  color: rgba(51, 51, 51, 1);
+  font-weight: normal;
+  width: 100%;
+  color: #9b9b9b;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+/* active state */
+
+.input-element:focus ~ .input-label,
+.input-element:valid ~ .input-label {
+  top: -20px;
+  color: #9b9b9b;
+  font-size: 14px;
+}
+
+/* Bottom State */
+
+.input-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.input-bar:before,
+.input-bar:after {
+  position: absolute;
+  bottom: 1px;
+  width: 0;
+  height: 2px;
+  content: "";
+  background: rgba(51, 51, 51, 1);
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.input-bar:before {
+  left: 50%;
+}
+
+.input-bar:after {
+  right: 50%;
+}
+
+.disabledLabelTop {
+  color: #9b9b9b;
+  font-size: 14px;
+}

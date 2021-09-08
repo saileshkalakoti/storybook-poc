@@ -1,0 +1,182 @@
+.checkbox {
+  display: inline-block;
+  transform: translateZ(0);
+  padding-top: 5px;
+}
+
+.checkbox label {
+  padding-left: 0;
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.checkbox .checkboxMaterial {
+  position: relative;
+  vertical-align: middle;
+}
+
+.checkbox .checkboxMaterial .check {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.checkbox .checkboxMaterial .check:before {
+  position: absolute;
+  content: "";
+  transform: rotate(43deg);
+  display: block;
+  width: 0;
+  height: 0;
+  margin-top: -4px;
+  margin-left: 6px;
+  box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0,
+    0 0 0 0 inset;
+  /* animation: checkbox-off 0.3s forwards ease-out; */
+}
+
+.checkbox input[type="checkbox"]:focus + .checkboxMaterial .check:after {
+  opacity: 0.2;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkboxMaterial .check:before {
+  box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px,
+    -5px 5px 0 10px, 20px -12px 0 11px;
+  animation: checkbox-on 0.3s forwards ease-out;
+}
+
+.checkbox input[type="checkbox"]:not(:checked) + .checkboxMaterial:before {
+  animation: rippleOff 700ms forwards ease-out;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkboxMaterial:before {
+  animation: rippleOn 700ms forwards ease-out;
+}
+
+.checkbox
+  input[type="checkbox"]:not(:checked)
+  + .checkboxMaterial
+  .check:after {
+  animation: rippleOff 700ms forwards ease-out;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkboxMaterial .check:after {
+  animation: rippleOn 700ms forwards ease-out;
+}
+
+.checkbox
+  input[type="checkbox"][disabled]:not(:checked)
+  ~ .checkboxMaterial
+  .check:before,
+.checkbox input[type="checkbox"][disabled] + .circle {
+  opacity: 0.5;
+}
+
+.checkbox input[type="checkbox"][disabled] + .checkboxMaterial .check:after {
+  transform: rotate(-45deg);
+  background-color: rgba(0, 0, 0, 0.84);
+}
+
+.coloured .checkboxMaterial .check {
+  color: #9b9b9b;
+}
+
+.coloured .checkboxMaterial:before {
+  background-color: #67b104;
+}
+
+.coloured input[type="checkbox"]:checked + .checkboxMaterial .check {
+  color: #67b104;
+}
+
+@keyframes checkbox-on {
+  0% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px,
+      -5px 5px 0 10px, 15px 2px 0 11px;
+  }
+  50% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px,
+      -5px 5px 0 10px, 20px 2px 0 11px;
+  }
+  100% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px,
+      -5px 5px 0 10px, 20px -12px 0 11px;
+  }
+}
+
+@keyframes checkbox-off {
+  0% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px,
+      -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  25% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px,
+      -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  50% {
+    transform: rotate(45deg);
+    width: 0px;
+    height: 0px;
+    margin-top: -4px;
+    margin-left: 6px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px,
+      -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+  }
+  51% {
+    transform: rotate(0deg);
+    width: 20px;
+    height: 20px;
+    margin-top: -2px;
+    margin-left: -2px;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0,
+      0px 0px 0 10px inset;
+  }
+  100% {
+    transform: rotate(0deg);
+    width: 20px;
+    height: 20px;
+    margin-top: -2px;
+    margin-left: -2px;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0,
+      0px 0px 0 0px inset;
+  }
+}
+
+@keyframes rippleOn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(13, 13);
+  }
+}
+
+@keyframes rippleOff {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(13, 13);
+  }
+}
+.disabledClass {
+  opacity: 0.3;
+}

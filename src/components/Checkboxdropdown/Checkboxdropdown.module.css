@@ -1,0 +1,94 @@
+
+.parent {
+  position: relative;
+}
+
+.label {
+  padding: 6px 0 15px 0;
+  border-bottom: 2px solid rgba(155, 155, 155, 0.3);
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  background-image: url(../../icons/Dropdown_form.svg);
+  background-position-x: 99%;
+  background-position-y: 16px;
+  background-repeat: no-repeat;
+  color: #404040;
+}
+
+.bodyContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  min-height: 50px;
+  max-height: 200px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #fff !important;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  overflow-y: unset;
+  z-index: 2;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: #404040;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.options:hover {
+  background-color: #e3e9fa;
+}
+
+.iconsContainer {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.iconsMargin {
+  margin-right: 10px;
+}
+
+.noOption {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputGroupStyle {
+  width: calc(100% - 20px); /* 20 px for left and right margin 10 each */
+  margin: 10px;
+  margin-top: 10px;
+}
+
+.input {
+  width: 100%;
+  border-bottom: 2px solid rgba(155, 155, 155, 0.3);
+  padding: 0 0 5px 0;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.placeHolder {
+  color: #9b9b9b;
+}
+
+@media (--for-mobile) {
+  .bodyContainer {
+    width: 92%;
+  }
+}
