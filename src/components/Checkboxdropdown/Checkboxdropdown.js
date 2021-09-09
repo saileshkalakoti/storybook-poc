@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import PropTypes from 'prop-types';
 import CheckBox from "../CheckBox/CheckBox";
 import TruncateText from "../TruncateText/TruncateText";
 import Input from "../Input/Input";
@@ -263,4 +264,16 @@ class CheckboxDropDown extends React.Component {
     );
   }
 }
+
+CheckboxDropDown.propTypes = {
+  /**
+   * Options: array of object {label: '', value: ''} which will act as options for dropdown
+   */
+  options: PropTypes.array,
+  /**
+   * onSelection: function to execute whenever an option is selected
+   */
+  onSelection: PropTypes.func,
+}
+
 export default CheckboxDropDown;

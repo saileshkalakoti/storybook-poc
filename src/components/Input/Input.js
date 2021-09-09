@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import classNames from "classnames";
 
 import styles from "./Input.module.css";
@@ -60,6 +61,42 @@ const Input = ({
       />
     </div>
   );
+}
+
+Input.propTypes = {
+  /**
+   * Type defines, what type of input it will be, date, number or text
+   */
+  type: PropTypes.string,
+  /**
+   * placeholder is used to show dummy string to let user know what to enter
+   */
+  placeholder: PropTypes.string,
+  /**
+   * Label defines what should be the label, appear before the input box
+   */
+  label: PropTypes.string,
+  /**
+   * onChange is the function that will be executed everytime there is a change in input
+   */
+  onChange: PropTypes.func
+  /**
+   * min: min denotes minimum value an input can have
+   */
+  /**
+   * max: max denotes maximum value an input can have
+   */
+  /**
+   * onBlur is the function that will execute when focus get shifted from the input
+   */
+}
+
+Input.defultProps = {
+  type: "",
+  placeholder: "",
+  min: "",
+  max: "",
+  onBlur: () => {}
 }
 
 export default Input;

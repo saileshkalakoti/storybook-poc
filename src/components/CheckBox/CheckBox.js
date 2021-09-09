@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
+import PropTypes from 'prop-types';
 import styles from "./CheckBox.module.css";
 
 const CheckBox = ({disabled, isChecked}) => {
@@ -30,6 +31,17 @@ const CheckBox = ({disabled, isChecked}) => {
     </div>
   );
 }
+CheckBox.propTypes = {
+    /**
+   * is the checkbox enabled to check or disabled.
+   */
+  disabled: PropTypes.bool,
+    /**
+   * Is the checkbox checked or not
+   */
+  isChecked: PropTypes.bool,
+};
+
 CheckBox.defaultProps = {
   isChecked: true,
   disabled: false,

@@ -6,7 +6,6 @@ export default {
   title: 'Custom/Checkboxdropdown',
   component: Checkboxdropdown,
   argTypes: {
-    text: {control: 'text'},
     options: {control: 'object'}
   },
 };
@@ -15,5 +14,6 @@ const Template = (args) => <div style={{width: "240px"}}><Checkboxdropdown {...a
 
 export const Primary = Template.bind({});
 Primary.args = {
-  options: ["option A", "option B", "option C", "option D"]
+  options: ["option A", "option B", "option C", "option D"],
+  onSelection: () => {}
 }
