@@ -7,7 +7,7 @@ export default {
   component: Input,
   argTypes: {
     type: {
-        options: ['date', 'text', 'number'],
+        options: ['date', 'text', 'number', 'file'],
         control: 'select'
     }
   },
@@ -17,7 +17,8 @@ const Template = (args) => <Input {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    placeholder: '',
-    label: 'Primay Label',
+    placeholder: 'Enter your first name',
+    label: 'Name ',
+    type: 'text',
     onChange: () => {},
 };

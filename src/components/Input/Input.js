@@ -67,11 +67,11 @@ Input.propTypes = {
   /**
    * Type defines, what type of input it will be, date, number or text
    */
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['file', 'date', 'text', 'number']).isRequired,
   /**
    * placeholder is used to show dummy string to let user know what to enter
    */
-  placeholder: PropTypes.string,
+  placeholder: PropTypes.string.isRequired,
   /**
    * Label defines what should be the label, appear before the input box
    */
@@ -91,8 +91,8 @@ Input.propTypes = {
    */
 }
 
-Input.defultProps = {
-  type: "",
+Input.defaultProps = {
+  type: "text",
   placeholder: "",
   min: "",
   max: "",
